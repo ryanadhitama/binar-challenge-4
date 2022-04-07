@@ -1,0 +1,440 @@
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-size: 14px;
+  line-height: 20px;
+}
+
+section {
+  overflow: hidden;
+}
+
+header {
+  padding: 177px 0 87px;
+  background: #f1f3ff;
+  position: relative;
+}
+
+section {
+  padding: 50px 0;
+}
+
+.section-lg {
+  padding: 100px 0;
+}
+
+section.why-us {
+  padding-top: 100px;
+}
+
+.btn-success {
+  background: #5cb85f;
+  border-color: #5cb85f;
+}
+
+.btn {
+  border-radius: 2px;
+  padding: 8px 12px;
+}
+
+.btn,
+.faq {
+  font-size: 14px;
+  line-height: 20px;
+}
+
+.navigation {
+  width: 100%;
+  top: 24px;
+  position: absolute;
+  z-index: 30;
+  transition-duration: 0.2s;
+  z-index: 999;
+}
+
+.navigation .navbar {
+  padding: 0px;
+}
+
+.navigation-fixed {
+  position: fixed;
+  width: 100%;
+  background: #fff;
+  top: 0px;
+  padding: 10px 0;
+  box-shadow: 4px 1px 4px #eee;
+}
+
+.navigation .navbar a.nav-link {
+  color: #000;
+  font-size: 14px;
+  line-height: 20px;
+}
+
+.navigation .navbar a.nav-link {
+  padding-left: 16px;
+  padding-right: 16px;
+  position: relative;
+}
+
+.navigation .navbar a.nav-link:hover {
+  text-decoration: underline;
+}
+
+.navigation .navbar li:nth-child(4) a.nav-link {
+  padding-right: 32px;
+}
+
+h1 {
+  font-size: 36px;
+  font-weight: 700;
+  line-height: 54px;
+}
+
+h2 {
+  font-weight: bold;
+  font-size: 24px;
+  line-height: 36px;
+}
+
+.footer-menu,
+p,
+.service li {
+  font-weight: 300;
+}
+
+.hero p {
+  max-width: 468px;
+}
+
+.hero-img {
+  max-width: 704px;
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  z-index: 0;
+}
+
+.hero {
+  z-index: 20;
+}
+
+.mb-40 {
+  margin-bottom: 40px !important;
+}
+
+.why-us__item {
+  border: 1px solid #d0d0d0;
+  border-radius: 8px;
+}
+
+.cta {
+  padding: 64px;
+  background: #0d28a6;
+  border-radius: 13px;
+  text-align: center;
+}
+
+.cta p {
+  max-width: 468px;
+  margin-bottom: 52px !important;
+}
+
+.faq-title {
+  padding: 18px 24px;
+  cursor: pointer;
+}
+
+.faq .card {
+  border: 1px solid #d0d0d0;
+  border-radius: 8px;
+}
+
+.faq-title div::before {
+  font-family: "bootstrap-icons";
+  content: "\f286";
+  float: right;
+}
+
+.faq-title div.collapsed::before {
+  content: "\f282";
+}
+
+.footer-social img {
+  margin-right: 16px;
+  margin-bottom: 16px;
+}
+
+.footer-menu {
+  font-weight: 400 !important;
+  padding-left: 0px !important;
+}
+
+.footer-menu li {
+  list-style-type: none;
+}
+
+.footer-menu li:not(:last-child) {
+  margin-bottom: 16px;
+}
+
+.footer-menu li a {
+  color: #000;
+}
+
+.service ul {
+  padding-left: 0px;
+  list-style: none;
+}
+.service li {
+  margin-bottom: 16px;
+  padding-left: 40px;
+  line-height: 24px;
+  position: relative;
+}
+
+.service li::before {
+  content: "";
+  background-image: url("../images/icon_list.png");
+  width: 24px;
+  height: 24px;
+  position: absolute;
+  left: 0;
+}
+
+.swiper {
+  width: 100%;
+  overflow: visible;
+}
+
+.testimonial-item {
+  padding: 69px 32px 69px 46px;
+  background: #f1f3ff;
+  border-radius: 8px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.testimonial-item .star {
+  margin-bottom: 16px;
+}
+
+.testimonial-item .profile {
+  width: 80px;
+  height: 80px;
+  border-radius: 100%;
+}
+
+.testimonial-item .testimonial-content {
+  padding-left: 46px;
+}
+
+.swiper-button {
+  width: 32px;
+  height: 32px;
+  border-radius: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #ffffff;
+  border: 1px solid #c4c4c4;
+  transition: ease 0.5s;
+}
+
+.swiper-button:hover {
+  background-color: #5cb85f;
+}
+
+.swiper-button svg {
+  height: 13px;
+}
+
+.swiper-button:hover svg > path {
+  stroke: #ffffff;
+}
+
+.swiper-button-wrapper {
+  display: flex;
+  justify-content: space-between;
+  max-width: 88px;
+  width: 100%;
+  margin: 24px auto 0;
+}
+
+.nav-item.nav-brand {
+  display: none;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 8px;
+  font-weight: 700;
+}
+
+.nav-item.nav-brand img {
+  cursor: pointer;
+}
+
+@media screen and (max-width: 992px) {
+  .navbar-collapse {
+    background: rgba(0, 0, 0, 0.6);
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    transition: opacity 0.4s ease-out;
+    opacity: 0;
+  }
+
+  .navbar-collapse.show,
+  .collapse:not(.show) {
+    opacity: 1;
+    transition: opacity 0.4s ease-in;
+  }
+
+  .navbar-collapse .navbar-nav {
+    margin-right: -180px;
+    transition: 0.2s;
+  }
+
+  .navbar-collapse.show .navbar-nav {
+    margin-right: 0px;
+    width: 180px;
+    background: #fff;
+    height: 100vh;
+    padding: 34px 16px;
+  }
+
+  .navbar-collapse .btn-success {
+    margin-top: 8px;
+  }
+
+  .nav-item.nav-brand {
+    display: flex;
+  }
+}
+
+@media (max-width: 1440px) {
+  .hero-img {
+    width: 50%;
+  }
+}
+
+@media (max-width: 1200px) {
+  .row-service > div:first-child {
+    padding-bottom: 70px;
+    text-align: center;
+  }
+
+  .row-service img {
+    width: 70%;
+    margin: auto;
+  }
+}
+
+@media (max-width: 981px) {
+  .navbar-collapse a.nav-link {
+    padding-left: 0px !important;
+  }
+  .why-us__item {
+    margin-bottom: 16px;
+  }
+  footer .row > div {
+    margin-bottom: 24px;
+  }
+  header {
+    padding: 90px 0 0;
+    display: flex;
+    flex-direction: column-reverse;
+    flex-wrap: wrap-reverse;
+  }
+  .hero-img {
+    position: relative;
+    margin: 24px auto 0;
+    width: calc(100% - 16px);
+  }
+  .hero p {
+    max-width: 100%;
+  }
+  .why-us__title,
+  .why-us__content {
+    text-align: center;
+  }
+}
+
+@media (max-width: 768px) {
+  .section-lg,
+  section {
+    padding: 30px 0;
+  }
+
+  .cta {
+    padding: 30px;
+  }
+
+  .cta p {
+    margin-bottom: 25px !important;
+  }
+
+  section.why-us {
+    padding-top: 60px;
+  }
+
+  .mb-40 {
+    margin-bottom: 30px !important;
+  }
+
+  .testimonial-item {
+    display: inline-block;
+    text-align: center;
+    padding: 50px 24px 50px 24px;
+  }
+
+  .testimonial-item .testimonial-content {
+    padding-left: 0px;
+  }
+
+  .testimonial {
+    padding-right: 16px !important;
+    padding-left: 16px !important;
+  }
+
+  .cta-title {
+    font-size: 24px;
+    line-height: 36px;
+  }
+
+  .faq-heading,
+  .faq-heading-body {
+    text-align: center;
+  }
+
+  .hero-img {
+    margin: 24px 0 0;
+  }
+}
+
+@media (min-width: 981px) {
+  .section-service {
+    padding-top: 100px;
+  }
+}
+
+@media (min-width: 1200px) {
+  .container {
+    max-width: 1168px;
+  }
+  .section-service .container {
+    max-width: 1027px;
+  }
+  .row-service {
+    display: flex;
+    align-items: center;
+  }
+  .row-service > div:first-child {
+    padding-right: 70px;
+  }
+}
