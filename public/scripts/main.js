@@ -54,18 +54,33 @@ $("ul.navbar-nav").click(function (e) {
 const urlSearchParams = new URLSearchParams(window.location.search);
 const params = Object.fromEntries(urlSearchParams.entries());
 
-// Coba olah data ini hehe :)
-console.log(params);
-
 /*
  * Contoh penggunaan DOM di dalam class
  * */
 
 if (params.search) {
   const app = new App();
-  const filter = function(el) {
-    return params.capacity ? el.capacity === parseInt(params.capacity) : true
-  }
+
+  const filter = function (item) {
+    for (var key in params) {
+      if (!key !== "search" && params[key].length > 0) {
+        if (key === "capacity" && item[key] < params[key]) {
+          return false;
+        }
+        if (key === "withDriver" && item[key] !== Boolean(params[key])) {
+          return false;
+        }
+        if (
+          key === "availableAt" &&
+          item[key].toISOString().split("T")[0] !== params[key]
+        ) {
+          return false;
+        }
+      }
+    }
+    return true;
+  };
+
   app.init(filter).then(app.run);
 }
 

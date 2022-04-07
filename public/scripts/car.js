@@ -21,6 +21,7 @@ class Car {
     options,
     specs,
     availableAt,
+    withDriver,
   }) {
     this.id = id;
     this.plate = plate;
@@ -37,6 +38,7 @@ class Car {
     this.options = options;
     this.specs = specs;
     this.availableAt = availableAt;
+    this.withDriver = withDriver;
   }
 
   render() {

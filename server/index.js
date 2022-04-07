@@ -40,14 +40,13 @@ function onRequest(req, res) {
       return;
     default:
       let splitData = req.url.split("/");
-      if (["images", "icons"].includes(splitData[1])) {
+      if (["images"].includes(splitData[1])) {
         res.writeHead(200);
         res.end(getFile(req.url));
       } else {
         res.writeHead(200);
         res.end(getHTML(req.url));
       }
-
       return;
   }
 }

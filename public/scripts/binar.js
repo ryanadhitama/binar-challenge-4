@@ -5,7 +5,7 @@ function getRandomInt(min, max) {
 }
 
 class Binar {
-  static populateCars = (cars) => {
+  static populateCars = (cars, randomVal = true) => {
     return cars.map((car) => {
       const isPositive = getRandomInt(0, 1) === 1;
       const timeAt = new Date();
@@ -13,10 +13,12 @@ class Binar {
       const availableAt = new Date(
         timeAt.getTime() + (isPositive ? mutator : -1 * mutator)
       );
+      const withDriver = Math.round(Math.random() * 1) === 1;
 
       return {
         ...car,
         availableAt,
+        withDriver,
       };
     });
   };
@@ -27,16 +29,13 @@ class Binar {
 
     if (!!cachedCarsString) {
       const cacheCars = JSON.parse(cachedCarsString);
-      cars = this.populateCars(cacheCars);
+      cars = this.populateCars(cacheCars, false);
     } else {
       const response = await fetch("/getcars");
       const body = await response.json();
       cars = this.populateCars(body);
-
       localStorage.setItem("CARS", JSON.stringify(cars));
     }
-
-    console.log(cars)
 
     if (filterer instanceof Function) return cars.filter(filterer);
 
