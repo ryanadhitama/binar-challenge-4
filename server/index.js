@@ -30,6 +30,12 @@ function onRequest(req, res) {
       res.writeHead(200);
       res.end(getHTML("cars.html"));
       return;
+    case "/getcars":
+      const dataPath = path.join(__dirname, "../data", "/cars.json");
+      const fileStream = fs.createReadStream(dataPath, "UTF-8");
+      res.writeHead(200, { "Content-Type": "application/json" });
+      fileStream.pipe(res);
+      return;
     default:
       let splitData = req.url.split("/");
       if (["images", "icons"].includes(splitData[1])) {
