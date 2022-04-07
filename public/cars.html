@@ -8,7 +8,6 @@
     <link rel="stylesheet" href="./css/bootstrap.css" />
     <link rel="stylesheet" href="./css/style.css" />
     <link rel="stylesheet" href="./css/aos.css" />
-    <link rel="stylesheet" href="./css/search.css" />
     <link rel="stylesheet" href="./css/swiper.css" />
     <!-- Bootstrap Icons -->
     <link
@@ -16,7 +15,8 @@
       href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css"
     />
   </head>
-  <body>
+
+  <body class="car">
     <div class="navigation">
       <div class="container">
         <nav class="navbar navbar-expand-lg">
@@ -87,43 +87,55 @@
         </div>
       </div>
     </header>
-    <section class="search-box">
-      <div class="search-content">
-        <div class="input-group d-flex flex-column">
-          <p>Tipe Driver</p>
-          <select class="form-select" id="inputTipeDriver">
-            <option class="item" selected>Pilih Tipe Driver</option>
-            <option class="item" value="true">Dengan Sopir</option>
-            <option class="item" value="false">
-              Tanpa Sopir (Lepas Kunci)
-            </option>
-          </select>
-        </div>
-        <div class="input-group d-flex flex-column">
-          <p>Tanggal</p>
-          <input type="date" class="form-control" />
-        </div>
-        <div class="input-group d-flex flex-column">
-          <p>Waktu Jemput</p>
-          <input type="time" class="form-control item" />
-        </div>
-        <div class="input-group d-flex flex-column">
-          <p>Jumlah Penumpang (Opsional)</p>
-          <div class="d-flex flex-row">
-            <input type="number" class="form-control item" />
-            <i class="bi bi-people-fill input-group-append people-icon"></i>
+    <div class="overlay" id="overlay"></div>
+    <form action="" method="get">
+      <section class="search-box">
+        <div class="search-content" data-aos="fade-up">
+          <div class="input-group d-flex flex-column">
+            <label>Tipe Driver</label>
+            <select class="form-control input" id="inputTipeDriver">
+              <option class="item" selected>Pilih Tipe Driver</option>
+              <option class="item" value="true">Dengan Sopir</option>
+              <option class="item" value="false">
+                Tanpa Sopir (Lepas Kunci)
+              </option>
+            </select>
           </div>
+          <div class="input-group d-flex flex-column">
+            <label>Tanggal</label>
+            <input type="date" class="form-control input" />
+          </div>
+          <div class="input-group d-flex flex-column">
+            <label>Waktu Jemput</label>
+            <input type="time" class="form-control item input" />
+          </div>
+          <div class="input-group d-flex flex-column">
+            <label>Jumlah Penumpang (Opsional)</label>
+            <div class="d-flex flex-row">
+              <input
+                name="capacity"
+                type="number"
+                class="form-control item input"
+              />
+              <i class="bi bi-people-fill input-group-append people-icon"></i>
+            </div>
+          </div>
+          <button
+            type="submit"
+            class="btn btn-success button-search"
+            id="load-btn"
+            name="search"
+            value="true"
+          >
+            Cari Mobil
+          </button>
         </div>
-
-        <button type="submit" class="btn button-search" id="load-btn">
-          Cari Mobil
-        </button>
-      </div>
-    </section>
+      </section>
+    </form>
 
     <!-- result card -->
     <div class="result-container">
-      <div class="result d-flex" id="body"></div>
+      <div class="result row" id="cars-container"></div>
     </div>
     <!-- /result card -->
 
@@ -175,7 +187,8 @@
   <script src="./scripts/bootstrap.js"></script>
   <script src="./scripts/aos.js"></script>
   <script src="./scripts/swiper.js"></script>
-  <script src="./scripts/main.js"></script>
-  <script src="scripts/handleInput.js"></script>
-  <script src="scripts/cars.js"></script>
+  <script type="text/javascript" src="./scripts/binar.js"></script>
+  <script type="text/javascript" src="./scripts/app.js"></script>
+  <script type="text/javascript" src="./scripts/car.js"></script>
+  <script type="text/javascript" src="./scripts/main.js"></script>
 </html>

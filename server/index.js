@@ -4,6 +4,7 @@
  * HTTP Server
  * */
 const http = require("http");
+const url = require("url");
 const { PORT = 8000 } = process.env; // Ambil port dari environment variable
 
 const fs = require("fs");
@@ -21,7 +22,8 @@ function getFile(file) {
 }
 
 function onRequest(req, res) {
-  switch (req.url) {
+  let urlParsed = url.parse(req.url, true).pathname;
+  switch (urlParsed) {
     case "/":
       res.writeHead(200);
       res.end(getHTML("index.html"));

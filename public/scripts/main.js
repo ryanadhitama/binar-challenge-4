@@ -45,3 +45,35 @@ $(".nav-item.nav-brand img").click(function () {
 $("ul.navbar-nav").click(function (e) {
   e.stopPropagation();
 });
+
+/*
+ * Contoh kode untuk membaca query parameter,
+ * Siapa tau relevan! :)
+ * */
+
+const urlSearchParams = new URLSearchParams(window.location.search);
+const params = Object.fromEntries(urlSearchParams.entries());
+
+// Coba olah data ini hehe :)
+console.log(params);
+
+/*
+ * Contoh penggunaan DOM di dalam class
+ * */
+
+if (params.search) {
+  const app = new App();
+  const filter = function(el) {
+    return params.capacity ? el.capacity === parseInt(params.capacity) : true
+  }
+  app.init(filter).then(app.run);
+}
+
+$(".input").each(function () {
+  $(this).on("focusout", function () {
+    document.getElementById("overlay").style.display = "none";
+  });
+  $(this).on("focus", function () {
+    document.getElementById("overlay").style.display = "block";
+  });
+});
