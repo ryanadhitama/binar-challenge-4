@@ -63,17 +63,14 @@ if (params.search) {
 
   const filter = function (item) {
     for (var key in params) {
-      if (!key !== "search" && params[key].length > 0) {
-        if (key === "capacity" && item[key] < params[key]) {
+      if ((!key !== "search" && !key !== "timeAt") && params[key].length > 0) {
+        if (key === "capacity" && item[key] !== parseInt(params[key])) {
           return false;
         }
         if (key === "withDriver" && item[key] !== Boolean(params[key])) {
           return false;
         }
-        if (
-          key === "availableAt" &&
-          item[key].toISOString().split("T")[0] !== params[key]
-        ) {
+        if (key === "availableAt" && item[key].split("T")[0] !== params[key]) {
           return false;
         }
       }
